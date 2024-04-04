@@ -3,7 +3,7 @@ import OSM from 'ol/source/OSM';
 import GeoJSON from 'ol/format/GeoJSON';
 import VectorSource from 'ol/source/Vector.js';
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
-import { createStyleFunctionFromUrl } from '../src/index.js';
+import { createStyleFunctionFromUrl } from 'ol-esri-styles';
 import { extend as extendExtent, createEmpty as createEmptyExtent } from 'ol/extent';
 
 export function initializeMap() {
