@@ -21,7 +21,7 @@ const lineDashPattern = {
  * @param {import('ol/proj/Projection')} [projection] - visibility of the labels are calculated using this projection units
  * @return {Promise<Function>} function used to style features
  */
-export const createStyleFunctionFromUrl = async(layerUrl, mapProjection) => {
+export const createStyleFunctionFromUrl = async (layerUrl, mapProjection) => {
     const response = await fetch(`${layerUrl}?f=json`);
     const esriStyleDefinition = await response.json();
     return await createStyleFunction(esriStyleDefinition, mapProjection);
@@ -35,7 +35,7 @@ export const createStyleFunctionFromUrl = async(layerUrl, mapProjection) => {
  * @param {import('ol/proj/Projection')} [projection] - visibility of the labels are calculated using this projection units
  * @return {Promise<Function>} function used to style features
  */
-export const createStyleFunction = async(esriLayerInfoJson, mapProjection) => {
+export const createStyleFunction = async (esriLayerInfoJson, mapProjection) => {
     let { featureStyles, labelStyles } = readEsriStyleDefinitions(esriLayerInfoJson.drawingInfo);
     for (let i = 0; i < featureStyles.length; i++) {
         featureStyles[i].style = await createFeatureStyle(featureStyles[i]);
@@ -52,8 +52,8 @@ export const createStyleFunction = async(esriLayerInfoJson, mapProjection) => {
         const featureStyle = featureStyles.find(({ filters }) => {
             if (filters) {
                 return filters.every(({ field, value, operator }) => {
-                    const currentValue = feature.get(field);
-					if(currentValue === null) currentValue = '';
+                    let currentValue = feature.get(field);
+                    if (currentValue === null) currentValue = '';
                     switch (operator) {
                         case 'in':
                             const valuesIn = value.split(',').map((value) => value.toString());
@@ -182,7 +182,7 @@ export const readEsriStyleDefinitions = ({ renderer, labelingInfo }) => {
                         lowerBound: classBreakInfo.hasOwnProperty('classMinValue') ? classBreakInfo.classMinValue : classBreakMinValue,
                         upperBound: classBreakInfo.classMaxValue,
                     },
-                }, ];
+                },];
 
                 featureStyles.push({
                     filters,
