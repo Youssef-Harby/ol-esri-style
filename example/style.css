@@ -116,3 +116,26 @@
   font-size: 14px;
   color: #333;
 }
+
+.popup-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.popup-content th,
+.popup-content td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.popup-content tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.popup-content th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4caf50;
+  color: white;
+}
