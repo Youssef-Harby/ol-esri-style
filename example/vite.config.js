@@ -1,5 +1,8 @@
-export default {
-  base: '/ol-esri-style/',
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+  base: '/ol-esri-styles/',
   build: {
     sourcemap: true,
   },
@@ -8,4 +11,5 @@ export default {
       'ol-esri-styles': path.resolve(__dirname, '../src'),
     },
   },
-};
+});
+
