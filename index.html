@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://openlayers.org/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using OpenLayers with Vite</title>
+    <script type="module" crossorigin src="/assets/index-CtVzfd7e.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dd5HBUD3.css">
+  </head>
+  <body>
+    <div id="popup" class="popup">
+      <button
+        class="popup-close-btn"
+        onclick="document.getElementById('popup').style.display = 'none';"
+      >
+        X
+      </button>
+      <div class="popup-content" id="popup-content"></div>
+    </div>
+
+    <div id="urlInputContainer">
+      <input
+        type="text"
+        id="mapServiceUrlInput"
+        placeholder="Enter Map Service URL"
+      />
+      <button id="loadMapBtn">Load Layers</button>
+    </div>
+    <div id="legend" class="legend">
+      Layers
+      <ul id="legend-items"></ul>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>
