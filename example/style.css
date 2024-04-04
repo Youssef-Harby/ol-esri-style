@@ -1,0 +1,118 @@
+@import "node_modules/ol/ol.css";
+
+/* Style for the map service URL input container */
+#urlInputContainer {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure it's above the map */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the map service URL input field */
+#mapServiceUrlInput {
+  font-size: 14px;
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px; /* Adjust as needed */
+}
+
+/* Style for the "Load Map" button */
+#loadMapBtn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#loadMapBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for the map and legend for consistency */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.legend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legend li {
+  margin-bottom: 5px;
+}
+
+.legend button {
+  margin-left: 5px;
+  background-color: #008cba; /* Blue */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.legend button:hover {
+  background-color: #005f86;
+}
+
+.popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  min-width: 200px;
+  z-index: 1000; /* Ensure it sits above map layers */
+  display: none; /* Initially hidden */
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  font-size: 14px;
+  color: #333;
+}

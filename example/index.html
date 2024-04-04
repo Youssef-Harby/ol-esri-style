@@ -1,44 +1,39 @@
 <!DOCTYPE html>
-<html>
-
-<body>
-    <style>
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-        }
-        
-        .map {
-            height: 100%;
-            width: 100%;
-            background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAnRSTlMAAHaTzTgAAAARSURBVHgBY3iKBFEAOp/+MgB+UQnYeBZPWAAAAABJRU5ErkJggg==) !important;
-        }
-        
-        .legend {
-            width: 300px;
-            display: flex;
-            flex-direction: column;
-            z-index: 9999;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            background-color: #ffffff85;
-        }
-        
-        ul {
-            padding-inline-start: 0px;
-        }
-    </style>
-    <script type="module" src="index.js"></script>
-    <div id="legend" class="legend">
-        Layers
-        <ul id="legend-items"></ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://openlayers.org/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using OpenLayers with Vite</title>
+  </head>
+  <body>
+    <div id="popup" class="popup">
+      <button
+        class="popup-close-btn"
+        onclick="document.getElementById('popup').style.display = 'none';"
+      >
+        X
+      </button>
+      <div class="popup-content" id="popup-content"></div>
     </div>
-    <div id="map" class="map" />
-</body>
 
+    <div id="urlInputContainer">
+      <input
+        type="text"
+        id="mapServiceUrlInput"
+        placeholder="Enter Map Service URL"
+      />
+      <button id="loadMapBtn">Load Map</button>
+    </div>
+    <div id="legend" class="legend">
+      Layers
+      <ul id="legend-items"></ul>
+    </div>
+    <div id="map"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
